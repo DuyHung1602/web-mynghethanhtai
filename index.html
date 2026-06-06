@@ -7,69 +7,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Thêm font Philosopher nghệ thuật cho Logo -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        walnut: {
-                            500: '#5a4639',
-                            800: '#4a3b32',
-                            900: '#2d231e',
-                        },
-                        beige: {
-                            50: '#fdfbf7',
-                            100: '#f5f0e6',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { colors: { walnut: { 500: '#5a4639', 800: '#4a3b32', 900: '#2d231e' }, beige: { 50: '#fdfbf7', 100: '#f5f0e6' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } } }
     </script>
     <style>
-        /* Hiệu ứng mượt mà khi cuộn */
         body { font-family: 'Inter', sans-serif; background-color: #fdfbf7; }
         h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
-        
-        /* Hiệu ứng Nút chớp sáng */
-        .glowing-btn {
-            box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
-            animation: pulse-glow 2s infinite;
-        }
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); }
-        }
-
-        /* Hiệu ứng chữ Vàng 3D (Metallic Gold) */
+        .glowing-btn { box-shadow: 0 0 20px rgba(234, 88, 12, 0.4); animation: pulse-glow 2s infinite; }
+        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(234, 88, 12, 0); } 100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); } }
         .font-logo { font-family: 'Philosopher', sans-serif; }
-        .text-gold-3d {
-            background: linear-gradient(180deg, #F9F1A9 0%, #DFB43F 40%, #593C01 48%, #F7D052 53%, #B58421 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: #DFB43F; /* Màu dự phòng */
-            filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.2));
-        }
+        .text-gold-3d { background: linear-gradient(180deg, #F9F1A9 0%, #DFB43F 40%, #593C01 48%, #F7D052 53%, #B58421 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.2)); }
     </style>
 </head>
 <body class="text-walnut-900 pb-20 md:pb-0">
 
-    <!-- Header -->
     <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="container mx-auto px-4 max-w-7xl h-20 flex items-center justify-between">
             <div class="flex items-center gap-2 cursor-pointer group">
-                <!-- Icon Gỗ Đơn Giản được chuyển sang màu vàng gold -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #DFB43F; filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.1));" class="transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                 <div class="text-[34px] md:text-[38px] font-logo flex items-baseline text-gold-3d">
                     <span class="font-bold tracking-tight">Thanh</span>
-                    <span class="font-bold italic ml-1 tracking-wide">Tài<span class="inline-block w-2 h-2 md:w-2.5 md:h-2.5 rounded-full ml-1 md:ml-1.5" style="background: linear-gradient(180deg, #F9F1A9, #DFB43F); box-shadow: 1px 1px 2px rgba(0,0,0,0.2);"></span></span>
+                    <span class="font-bold italic ml-1 tracking-wide">Tài</span>
                 </div>
             </div>
             <div class="hidden md:flex items-center gap-6 font-medium text-walnut-800">
@@ -80,298 +39,33 @@
         </div>
     </header>
 
-    <!-- Banner Khuyến Mãi (Hero Section) -->
     <section class="relative h-[85vh] min-h-[600px] flex items-center justify-center mt-20 overflow-hidden bg-walnut-900">
-        <!-- Ảnh Background Xưởng/Gỗ thực tế -->
         <div class="absolute inset-0">
             <img src="nen.jpeg" alt="" onerror="this.style.display='none'" class="w-full h-full object-cover opacity-80">
-            <!-- Lớp phủ màu đen để làm nổi bật chữ -->
             <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
         </div>
-        
-        <div class="relative z-10 w-full container mx-auto px-4 max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-10 mt-10 md:mt-0">
+        <div class="relative z-10 w-full container mx-auto px-4 max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-10">
             <div class="max-w-2xl text-left">
-                <div class="inline-block bg-orange-600/20 border border-orange-500/50 text-orange-400 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide mb-4">
-                    Ưu đãi đặc biệt cho Đại Lý & CTV
-                </div>
-                <h1 class="text-4xl md:text-6xl text-white font-serif font-bold leading-tight mb-4">
-                    Mỹ Nghệ Thanh Tài <br>
-                    <span class="text-3xl md:text-5xl text-beige-100 font-medium italic mt-2 block">Giữ trọn nét gỗ truyền thống</span>
-                </h1>
-                <p class="text-lg md:text-xl text-stone-300 mb-8 max-w-lg leading-relaxed">
-                    Chuyên sỉ đồ nội thất đẳng cấp. <strong class="text-white">Hàng mộc tại xưởng - Không qua trung gian.</strong> Đảm bảo giá tốt nhất thị trường để bạn tối ưu lợi nhuận.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://zalo.me/0877442662" target="_blank" class="glowing-btn text-center bg-orange-600 hover:bg-orange-500 text-white text-lg font-bold py-4 px-8 rounded-full transition-all transform hover:-translate-y-1">
-                        LIÊN HỆ NGAY NHẬN ƯU ĐÃI
-                    </a>
-                </div>
-            </div>
-
-            <!-- Thẻ Thông Tin Bên Phải -->
-            <div class="w-full lg:w-[420px] shrink-0">
-                <div class="bg-black/30 backdrop-blur-md border border-white/10 p-6 lg:p-8 rounded-3xl shadow-2xl">
-                    <h3 class="text-xl font-serif font-bold text-orange-400 mb-4 border-b border-white/20 pb-3 flex items-center gap-2">
-                        Chuyên sỉ - lẻ đồ gỗ mỹ nghệ ✨
-                    </h3>
-                    <ul class="space-y-3 text-stone-200 mb-6 text-sm lg:text-base">
-                        <li class="flex items-start gap-3">
-                            <span class="text-orange-500 font-bold mt-0.5">✔</span>
-                            <span>Nguồn hàng dồi dào – mẫu mã đa dạng</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-orange-500 font-bold mt-0.5">✔</span>
-                            <span>Nhận sản xuất theo yêu cầu</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-orange-500 font-bold mt-0.5">✔</span>
-                            <span>Hỗ trợ giá tốt cho đại lý • shop • CTV 🤝</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
-                        <p class="text-sm text-orange-300 font-semibold mb-2">Sản xuất trực tiếp tại xưởng</p>
-                        <div class="flex gap-3 items-start text-stone-300 text-sm">
-                            <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <div>
-                                <span class="block text-white font-medium">📍 Thôn Đông - Phù Khê - Từ Sơn - Bắc Ninh</span>
-                                <span class="block text-xs text-stone-400 mt-1 italic">(Làng nghề mộc truyền thống)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="text-4xl md:text-6xl text-white font-serif font-bold leading-tight mb-4">Mỹ Nghệ Thanh Tài <br> <span class="text-3xl md:text-5xl text-beige-100 font-medium italic mt-2 block">Giữ trọn nét gỗ truyền thống</span></h1>
+                <p class="text-lg md:text-xl text-stone-300 mb-8 max-w-lg leading-relaxed">Chuyên sỉ đồ nội thất đẳng cấp. <strong class="text-white">Hàng mộc tại xưởng - Không qua trung gian.</strong></p>
+                <a href="https://zalo.me/0877442662" target="_blank" class="glowing-btn text-center bg-orange-600 hover:bg-orange-500 text-white text-lg font-bold py-4 px-8 rounded-full transition-all transform hover:-translate-y-1">LIÊN HỆ NGAY NHẬN ƯU ĐÃI</a>
             </div>
         </div>
     </section>
 
-    <!-- Bộ sưu tập mới nhất -->
-    <section id="san-pham" class="py-20 md:py-32 bg-beige-50">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-walnut-800 mb-4">Bộ Sưu Tập Mới Nhất</h2>
-                <p class="text-walnut-500 text-lg">Những chế tác tinh xảo, chất gỗ chuẩn chỉ được tuyển chọn kỹ lưỡng. Thiết kế tôn vinh sự sang trọng cho mọi không gian.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                <!-- Sản phẩm 1 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-15px_rgba(234,88,12,0.15)] transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-80 md:h-96 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all z-10"></div>
-                        <img src="boghe.jpeg" alt="Bàn Ghế Gỗ" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 z-20 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-orange-600 shadow-sm">
-                            Bán chạy
-                        </div>
-                    </div>
-                    <div class="p-8 text-center bg-white">
-                        <h3 class="text-2xl font-serif font-bold text-walnut-800 mb-3">Bàn Ghế Nội Thất</h3>
-                        <p class="text-walnut-500 mb-6 leading-relaxed">Đa dạng kích thước, vân gỗ tự nhiên tuyển chọn, độ hoàn thiện tinh xảo từng góc cạnh.</p>
-                        <a href="#lien-he" class="inline-block w-full border-2 border-walnut-800 text-walnut-800 hover:bg-orange-600 hover:border-orange-600 hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-300">
-                            Nhận Báo Giá Sỉ
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 2 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-15px_rgba(234,88,12,0.15)] transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-80 md:h-96 overflow-hidden relative">
-                        <img src="dongo.jpg" alt="Đôn Gỗ Nghệ Thuật Sắc Nét" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="p-8 text-center bg-white">
-                        <h3 class="text-2xl font-serif font-bold text-walnut-800 mb-3">Đôn Gỗ Nghệ Thuật</h3>
-                        <p class="text-walnut-500 mb-6 leading-relaxed">Thiết kế nguyên khối vững chắc, kiểu dáng độc đáo, tôn vinh mọi vật phẩm bày trí.</p>
-                        <a href="#lien-he" class="inline-block w-full border-2 border-walnut-800 text-walnut-800 hover:bg-orange-600 hover:border-orange-600 hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-300">
-                            Nhận Báo Giá Sỉ
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 3 -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-15px_rgba(234,88,12,0.15)] transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="h-80 md:h-96 overflow-hidden relative">
-                        <img src="anh5.jpg" alt="" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute top-4 right-4 z-20 bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
-                            Mẫu Mới
-                        </div>
-                    </div>
-                    <div class="p-8 text-center bg-white">
-                        <h3 class="text-2xl font-serif font-bold text-walnut-800 mb-3">Phụ Kiện Mỹ Nghệ</h3>
-                        <p class="text-walnut-500 mb-6 leading-relaxed">Đường nét chạm khắc điêu luyện, sắc sảo. Lớp phủ chống nước bền bỉ với thời gian.</p>
-                        <a href="#lien-he" class="inline-block w-full border-2 border-walnut-800 text-walnut-800 hover:bg-orange-600 hover:border-orange-600 hover:text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-300">
-                            Nhận Báo Giá Sỉ
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 4 (Nhóm Zalo Sỉ) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-15px_rgba(59,130,246,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-2 border-blue-50">
-                    <a href="https://zalo.me/g/lrrzmk305" target="_blank" class="block h-80 md:h-96 overflow-hidden relative bg-white flex flex-col items-center justify-center p-8 cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white group-hover:bg-blue-50 transition-all z-0"></div>
-                        <!-- API Tự động tạo QR Code từ Link -->
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://zalo.me/g/lrrzmk305" alt="Mã QR Nhóm Zalo Sỉ" class="w-56 h-56 md:w-64 md:h-64 object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-700 mix-blend-multiply">
-                        <div class="absolute top-4 right-4 z-20 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21.1 11.23c0-4.66-4.52-8.43-10.1-8.43-5.58 0-10.1 3.77-10.1 8.43 0 4.65 4.52 8.42 10.1 8.42 1.48 0 2.9-.27 4.16-.76l3.52 1.86c.44.23.95-.14.81-.6l-.88-3.04c1.55-1.57 2.49-3.66 2.49-5.88z"/></svg>
-                            Nhóm Zalo
-                        </div>
-                    </a>
-                    <div class="p-8 text-center bg-white relative z-20 border-t border-gray-50">
-                        <h3 class="text-2xl font-serif font-bold text-walnut-800 mb-3">Nhóm Mẫu Giá Tốt</h3>
-                        <p class="text-walnut-500 mb-6 leading-relaxed text-sm">
-                            <strong class="text-orange-600 text-base">Thanh Tài Đầu Mối Mỹ Nghệ</strong><br>
-                            Chuyên sỉ phụ kiện mỹ nghệ: Đôn, khay trà, khung ảnh, ban thờ Thần Tài, tủ giày... Cập nhật mẫu mới mỗi ngày!
-                        </p>
-                        <a href="https://zalo.me/g/lrrzmk305" target="_blank" class="inline-flex w-full bg-blue-500 text-white hover:bg-blue-600 font-semibold py-3 px-6 rounded-xl transition-colors duration-300 shadow-md justify-center items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.1 11.23c0-4.66-4.52-8.43-10.1-8.43-5.58 0-10.1 3.77-10.1 8.43 0 4.65 4.52 8.42 10.1 8.42 1.48 0 2.9-.27 4.16-.76l3.52 1.86c.44.23.95-.14.81-.6l-.88-3.04c1.55-1.57 2.49-3.66 2.49-5.88z"/></svg>
-                            Quét Mã / Tham Gia Ngay
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Sản phẩm 5 (Nhóm Zalo VIP) -->
-                <div class="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-15px_rgba(59,130,246,0.2)] transition-all duration-300 transform hover:-translate-y-2 border-2 border-blue-50">
-                    <a href="https://zalo.me/g/jxyaly518" target="_blank" class="block h-80 md:h-96 overflow-hidden relative bg-white flex flex-col items-center justify-center p-8 cursor-pointer">
-                        <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white group-hover:bg-blue-50 transition-all z-0"></div>
-                        <!-- API Tự động tạo QR Code từ Link VIP -->
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https://zalo.me/g/jxyaly518" alt="Mã QR Nhóm Zalo VIP" class="w-56 h-56 md:w-64 md:h-64 object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-700 mix-blend-multiply">
-                        <div class="absolute top-4 right-4 z-20 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M21.1 11.23c0-4.66-4.52-8.43-10.1-8.43-5.58 0-10.1 3.77-10.1 8.43 0 4.65 4.52 8.42 10.1 8.42 1.48 0 2.9-.27 4.16-.76l3.52 1.86c.44.23.95-.14.81-.6l-.88-3.04c1.55-1.57 2.49-3.66 2.49-5.88z"/></svg>
-                            Nhóm Zalo VIP
-                        </div>
-                    </a>
-                    <div class="p-8 text-center bg-white relative z-20 border-t border-gray-50">
-                        <h3 class="text-2xl font-serif font-bold text-walnut-800 mb-3">Nhóm Tác Phẩm Cao Cấp</h3>
-                        <p class="text-walnut-500 mb-6 leading-relaxed text-sm">
-                            <strong class="text-orange-600 text-base">Thanh Tài - Đồ Gỗ Thủ Công Mỹ Nghệ VIP</strong><br>
-                            Chuyên dòng hàng cao cấp Giường Tủ Sập Bộ Bàn Trà, Bộ bàn Ăn...
-                        </p>
-                        <a href="https://zalo.me/g/jxyaly518" target="_blank" class="inline-flex w-full bg-blue-500 text-white hover:bg-blue-600 font-semibold py-3 px-6 rounded-xl transition-colors duration-300 shadow-md justify-center items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.1 11.23c0-4.66-4.52-8.43-10.1-8.43-5.58 0-10.1 3.77-10.1 8.43 0 4.65 4.52 8.42 10.1 8.42 1.48 0 2.9-.27 4.16-.76l3.52 1.86c.44.23.95-.14.81-.6l-.88-3.04c1.55-1.57 2.49-3.66 2.49-5.88z"/></svg>
-                            Quét Mã / Tham Gia Ngay
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <section class="py-20 bg-beige-100 text-center" id="lien-he">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-serif font-bold text-walnut-900 mb-6">Bạn Đã Sẵn Sàng Trở Thành Đối Tác?</h2>
+            <div class="text-4xl md:text-6xl font-bold text-walnut-900 font-serif mb-8">0877.44.2662</div>
+            <a href="https://zalo.me/0877442662" target="_blank" class="inline-flex bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 items-center gap-2">
+                NHẮN TIN ZALO
+            </a>
         </div>
     </section>
 
-    <!-- Lý do chọn chúng tôi -->
-    <section id="ly-do" class="py-20 bg-walnut-900 text-white">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Vì Sao Nên Chọn Chúng Tôi?</h2>
-                <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Box 1 -->
-                <div class="bg-walnut-800/50 p-8 rounded-3xl border border-walnut-500/30 hover:bg-walnut-800 transition duration-300 text-center">
-                    <div class="w-16 h-16 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 font-serif">Hơn 35 Năm Tay Nghề</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Kinh nghiệm chế tác gỗ truyền thống lâu đời, đảm bảo mỗi sản phẩm là một tác phẩm hoàn hảo.</p>
-                </div>
-                
-                <!-- Box 2 -->
-                <div class="bg-walnut-800/50 p-8 rounded-3xl border border-walnut-500/30 hover:bg-walnut-800 transition duration-300 text-center">
-                    <div class="w-16 h-16 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 font-serif">Cam Kết Chuẩn Gỗ</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Người thật việc thật. Mọi chủng loại gỗ cam kết đúng 100% như mô tả và tư vấn ban đầu.</p>
-                </div>
-
-                <!-- Box 3 -->
-                <div class="bg-walnut-800/50 p-8 rounded-3xl border border-walnut-500/30 hover:bg-walnut-800 transition duration-300 text-center">
-                    <div class="w-16 h-16 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform -rotate-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 font-serif">Chính Sách Rõ Ràng</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Nhận đặt hàng theo yêu cầu riêng biệt. Hỗ trợ đóng gói cẩn thận, vận chuyển tận nhà an toàn.</p>
-                </div>
-
-                <!-- Box 4 -->
-                <div class="bg-walnut-800/50 p-8 rounded-3xl border border-walnut-500/30 hover:bg-walnut-800 transition duration-300 text-center">
-                    <div class="w-16 h-16 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 font-serif">Tối Ưu Lợi Nhuận</h3>
-                    <p class="text-stone-400 text-sm leading-relaxed">Lấy hàng mộc trực tiếp tại xưởng Phủ Khê, bỏ qua mọi trung gian, tối đa hóa biên độ lợi nhuận cho đại lý.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Cuối Trang -->
-    <section class="py-20 bg-beige-100 relative overflow-hidden" id="lien-he">
-        <!-- Vòng tròn trang trí -->
-        <div class="absolute -top-24 -left-24 w-64 h-64 bg-orange-200 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
-        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-amber-200 rounded-full mix-blend-multiply filter blur-2xl opacity-50"></div>
-        
-        <div class="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-serif font-bold text-walnut-900 mb-6">Bạn Đã Sẵn Sàng Trở Thành Đối Tác?</h2>
-            <p class="text-xl text-walnut-800 mb-10 max-w-2xl mx-auto">Số lượng hàng mộc đẹp tại xưởng luôn có hạn. Liên hệ ngay để chốt giữ những kiện hàng vân gỗ xuất sắc nhất!</p>
-            
-            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-xl flex flex-col items-center">
-                <p class="text-sm font-bold tracking-widest text-orange-600 uppercase mb-4">Gọi Ngay Hoặc Nhắn Zalo</p>
-                <div class="text-4xl md:text-6xl font-bold text-walnut-900 font-serif mb-8 tracking-wider">
-                    0877.44.2662
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <a href="tel:0877442662" class="glowing-btn bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        GỌI ĐIỆN NGAY
-                    </a>
-                    <a href="https://zalo.me/0877442662" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2" style="cursor: pointer; position: relative; z-index: 9999;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.1 11.23c0-4.66-4.52-8.43-10.1-8.43-5.58 0-10.1 3.77-10.1 8.43 0 4.65 4.52 8.42 10.1 8.42 1.48 0 2.9-.27 4.16-.76l3.52 1.86c.44.23.95-.14.81-.6l-.88-3.04c1.55-1.57 2.49-3.66 2.49-5.88z"/></svg>
-    NHẮN TIN ZALO
-</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-walnut-900 pt-16 pb-8 border-t border-walnut-800">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-2 mb-6 cursor-pointer group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #DFB43F; filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.1));" class="transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                        <div class="text-[34px] md:text-[38px] font-logo flex items-baseline text-gold-3d">
-                            <span class="font-bold tracking-tight">Thanh</span>
-                            <span class="font-bold italic ml-1 tracking-wide">Tài<span class="inline-block w-2 h-2 md:w-2.5 md:h-2.5 rounded-full ml-1 md:ml-1.5" style="background: linear-gradient(180deg, #F9F1A9, #DFB43F); box-shadow: 1px 1px 2px rgba(0,0,0,0.2);"></span></span>
-                        </div>
-                    </div>
-                    <p class="text-stone-400 max-w-sm">Chuyên cung cấp sỉ nội thất đồ gỗ mỹ nghệ. Đảm bảo chất lượng, giá gốc tận xưởng không qua trung gian.</p>
-                </div>
-                
-                <div class="text-center md:text-right text-stone-300">
-                    <p class="flex items-center justify-center md:justify-end gap-2 mb-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-500"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Xem hàng trực tiếp tại: <strong>Phủ Khê, Từ Sơn, Bắc Ninh</strong>
-                    </p>
-                    <p class="flex items-center justify-center md:justify-end gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-500"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        Hotline/Zalo: <strong>0877.44.2662</strong>
-                    </p>
-                </div>
-            </div>
-            <div class="border-t border-walnut-800 mt-10 pt-6 text-center text-stone-500 text-sm">
-                &copy; 2026 Mỹ Nghệ Thanh Tài. Bảo lưu mọi quyền.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Thanh Buttons Cố Định Cho Mobile (Sticky Mobile CTA) -->
-    <div class="fixed bottom-0 left-0 w-full bg-white shadow-[0_-5px_15px_rgba(0,0,0,0.1)] md:hidden z-50 flex border-t border-gray-100">
-        <a href="tel:0877442662" class="flex-1 py-3 text-center flex flex-col items-center justify-center border-r border-gray-100 bg-orange-50 text-orange-600 font-bold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span class="text-xs uppercase tracking-wider">Gọi điện</span>
-        </a>
-        <a href="https://zalo.me/g/0877442662" target="_blank" class="flex-1 py-3 text-center flex flex-col items-center justify-center bg-blue-500 text-white font-bold">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="mb-1"><path d="M21.1 11.23c0-4.66-4.52-8.43-10.1-8.43-5.58 0-10.1 3.77-10.1 8.43 0 4.65 4.52 8.42 10.1 8.42 1.48 0 2.9-.27 4.16-.76l3.52 1.86c.44.23.95-.14.81-.6l-.88-3.04c1.55-1.57 2.49-3.66 2.49-5.88z"/></svg>
-            <span class="text-xs uppercase tracking-wider">Nhắn Zalo</span>
-        </a>
+    <div class="fixed bottom-0 left-0 w-full bg-white shadow-md md:hidden z-50 flex border-t border-gray-100">
+        <a href="tel:0877442662" class="flex-1 py-3 text-center text-orange-600 font-bold">Gọi điện</a>
+        <a href="https://zalo.me/0877442662" target="_blank" class="flex-1 py-3 text-center bg-blue-500 text-white font-bold">Nhắn Zalo</a>
     </div>
 
 </body>
