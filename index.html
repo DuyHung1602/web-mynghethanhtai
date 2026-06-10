@@ -522,5 +522,34 @@ src="https://www.facebook.com/tr?id=2200413927399174&ev=PageView&noscript=1"
     document.body.style.paddingTop = '70px';
   }
 </script>
+<script>
+function getCookie(name) {
+  var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : '';
+}
+
+function guiCAPI(tenSuKien) {
+  fetch('/.netlify/functions/meta-capi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      eventName: tenSuKien,
+      fbc: getCookie('_fbc'),
+      fbp: getCookie('_fbp'),
+      eventSourceUrl: window.location.href
+    })
+  });
+}
+
+// Track tất cả nút gọi điện và Zalo
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(btn) {
+    btn.addEventListener('click', function() { guiCAPI('Contact'); });
+  });
+  document.querySelectorAll('a[href*="zalo.me"]').forEach(function(btn) {
+    btn.addEventListener('click', function() { guiCAPI('Contact'); });
+  });
+});
+</script>
 </body>
 </html>
