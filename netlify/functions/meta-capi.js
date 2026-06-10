@@ -23,6 +23,7 @@ exports.handler = async function(event) {
       event_name: body.eventName || 'Contact',
       event_time: Math.floor(Date.now() / 1000),
       action_source: 'website',
+      test_event_code: 'TEST8000',
       event_source_url: body.eventSourceUrl || '',
       event_id: `evt_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       user_data: {
